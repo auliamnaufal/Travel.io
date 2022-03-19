@@ -1,4 +1,4 @@
-var CACHE_NAME = 'simple-progressive-spa-1';
+var CACHE_NAME = 'simple-progressive-spa-2';
 var urlsToCache = [
 	'/static/manifest.json',
   '/index.html',

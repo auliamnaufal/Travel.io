@@ -4,11 +4,11 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "Simple Progressive Single Page App",
-    "short_name": "SPSPA",
+    "name": "Travel.io",
+    "short_name": "Travel.io",
     "icons": [
         {
-            "src": "/static/icon.icon.png",
+            "src": "/static/icon/icon.png",
             "sizes": "192x192",
             "type": "image/png"
         }
