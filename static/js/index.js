@@ -1,5 +1,5 @@
-import Dashboard from './views/Dashboard'
-import About from './views/About'
+import Dashboard from './views/Dashboard.js'
+import About from './views/About.js'
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
@@ -19,14 +19,14 @@ const navigateTo = url => {
 
 const router = async () => {
 	const routes = [
-			{ path: "/", view: Dashboard, },
-			{ path: "/about", view: About },
+			{ path: "#/", view: Dashboard, },
+			{ path: "#/about", view: About },
 	];
 
 	const potentialMatches = routes.map(route => {
     return {
-        route,
-        result: location.pathname.match(pathToRegex(route.path))
+        route: route,
+        result: location.hash.match(pathToRegex(route.path))
     };
 	});
 
@@ -40,19 +40,28 @@ const router = async () => {
 			};
 	}	
 
+	console.log(match)
+	console.log(potentialMatches)
+
 	const view = new match.route.view(getParams(match));
 	document.querySelector("#app").innerHTML = await view.getHtml();
 }
 
-window.addEventListener("popstate", router);
 
-document.addEventListener("DOMContentLoaded", () => {
-    document.body.addEventListener("click", e => {
-        if (e.target.matches("[data-link]")) {
-            e.preventDefault();
-            navigateTo(e.target.href);
-        }
-    });
+window.addEventListener("popstate", router)
 
-    router();
+window.addEventListener("load", () => {
+	const url = window.location.hash
+
+	navigateTo(url)
+
+	router()
+});
+
+window.addEventListener("hashchange", () => {
+  const url = window.location.hash
+
+	navigateTo(url)
+
+	router()
 });

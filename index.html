@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page App (Vanilla JS)</title>
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="manifest" href="./static/manifest.json">
+    <link rel="icon" href="/static/icon-192x192.png">
+</head>
+<body>
+    <nav class="nav">
+        <a href="#/" class="nav__link" data-link>Dashboard</a>
+        <a href="#/about" class="nav__link" data-link>About</a>
+    </nav>
+    <div id="app"></div>
+    <script type="module" src="./static/js/index.js"></script>
+    <!-- <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('./sw.js').then(function(registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script> -->
+</body>
+</html>
