@@ -6,14 +6,21 @@
     <title>Single Page App (Vanilla JS)</title>
     <link rel="stylesheet" href="./static/css/index.css">
     <link rel="manifest" href="./static/manifest.json">
-    <link rel="icon" href="/static/icon-192x192.png">
+    <link rel="icon" href="/static/icon/icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="nav">
-        <a href="#/" class="nav__link" data-link>Dashboard</a>
-        <a href="#/about" class="nav__link" data-link>About</a>
+        <h1 class="nav__brand">Travel.io</h1>
+        <div class="nav__list">
+            <a href="#/" class="nav__link">Dashboard</a>
+            <a href="#/about" class="nav__link">About</a>
+        </div>
     </nav>
-    <div id="app"></div>
+    <main id="app"></main>
     <script type="module" src="./static/js/index.js"></script>
     <!-- <script>
         if ('serviceWorker' in navigator) {
